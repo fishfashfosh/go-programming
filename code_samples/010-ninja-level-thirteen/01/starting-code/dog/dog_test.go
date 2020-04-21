@@ -30,6 +30,11 @@ func ExampleYears() {
 	// Output:  70
 }
 
+func ExampleYearsTwo() {
+	fmt.Println(YearsTwo(10))
+	// Output:  70
+}
+
 func BenchmarkYears(b *testing.B) {
 
 	for n := 0; n < b.N; n++ {
