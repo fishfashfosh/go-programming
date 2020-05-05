@@ -1,9 +1,9 @@
+// Package word provides utility functions for words
 package word
 
 import "strings"
 
-// no need to write an example for this one
-// writing a test for this one is a bonus challenge; harder
+// Return a map showing the words in the given string along with their counts
 func UseCount(s string) map[string]int {
 	xs := strings.Fields(s)
 	m := make(map[string]int)
