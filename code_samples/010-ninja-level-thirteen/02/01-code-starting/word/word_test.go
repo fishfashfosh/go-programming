@@ -6,18 +6,18 @@ import (
 
 func TestUseCount(t *testing.T) {
 	mystring1 := "once upon a time"
-	mymap1 := map[string]int {
+	mymap1 := map[string]int{
 		"once": 1,
 		"upon": 1,
-		"a": 1,
+		"a":    1,
 		"time": 1,
 	}
 	mystring2 := "one two two three three three four four four four"
-	mymap2 := map[string]int {
-		"one": 1,
-		"two": 2,
+	mymap2 := map[string]int{
+		"one":   1,
+		"two":   2,
 		"three": 3,
-		"four": 4,
+		"four":  4,
 	}
 
 	got := UseCount(mystring1)
@@ -52,3 +52,18 @@ func TestCount(t *testing.T) {
 
 }
 
+func BenchmarkUseCount(b *testing.B) {
+
+	mystring := "one two two three three three four four four four"
+	for n := 0; n < b.N; n++ {
+		UseCount(mystring)
+	}
+}
+
+func BenchmarkCount(b *testing.B) {
+
+	mystring := "one two two three three three four four four four"
+	for n := 0; n < b.N; n++ {
+		Count(mystring)
+	}
+}
