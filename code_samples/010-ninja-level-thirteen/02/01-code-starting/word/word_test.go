@@ -2,6 +2,7 @@ package word
 
 import (
 	"testing"
+	"fmt"
 )
 
 func TestUseCount(t *testing.T) {
@@ -67,3 +68,10 @@ func BenchmarkCount(b *testing.B) {
 		Count(mystring)
 	}
 }
+
+
+func ExampleCount() {
+	fmt.Println(Count("one two three four"))
+	// Output:  4
+}
+
