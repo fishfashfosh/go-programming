@@ -2,7 +2,7 @@ package mymath
 
 import (
 	"testing"
-//	"fmt"
+	"fmt"
 )
 
 func TestCenteredAvg(t *testing.T) {
@@ -19,3 +19,27 @@ func TestCenteredAvg(t *testing.T) {
 	}
 }
 
+func ExampleCenteredAvg() {
+	xi := []int {
+		1,
+		2,
+		10,
+		12,
+	}
+
+	fmt.Println(CenteredAvg(xi))
+	// Output: 6
+}
+
+func BenchmarkCenteredAvg(t *testing.B) {
+	xi := []int {
+		1,
+		2,
+		10,
+		12,
+	}
+
+	for i := 0; i < t.N; i++ {
+		CenteredAvg(xi)
+	}
+}
