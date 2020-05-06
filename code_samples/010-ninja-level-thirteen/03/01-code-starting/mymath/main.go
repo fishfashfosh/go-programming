@@ -1,3 +1,4 @@
+// Package mymath provieds an average function
 package mymath
 
 import "sort"
